@@ -1,4 +1,4 @@
- public class SavingsAccount {
+public class SavingsAccount {
     // Properti
     public String name;
     public double balance;
@@ -21,16 +21,19 @@
         }
     }
 
-    // Tarik saldo (Latihan 3)
-    public void withdraw(double amount) {
+    // Tarik saldo dengan validasi + return value
+    public boolean withdraw(double amount) {
         if (amount < 0) {
-            System.out.println("Jumlah penarikan tidak boleh negatif!");
+            System.out.println("❌ Penarikan gagal: jumlah tidak boleh negatif!");
+            return false;
         } else if (amount > balance) {
-            System.out.println("Saldo tidak mencukupi untuk penarikan!");
+            System.out.println("❌ Penarikan gagal: saldo tidak mencukupi!");
+            return false;
         } else {
             balance -= amount;
-            System.out.println("Penarikan berhasil: -" + amount);
+            System.out.println("✅ Penarikan berhasil: -" + amount);
             System.out.println("Saldo baru: " + balance);
+            return true;
         }
     }
 
@@ -47,3 +50,4 @@
         System.out.println("Bunga ditambahkan: " + interest);
     }
 }
+
