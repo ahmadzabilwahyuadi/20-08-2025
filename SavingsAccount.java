@@ -21,19 +21,16 @@ public class SavingsAccount {
         }
     }
 
-    // Tarik saldo dengan validasi + return value
-    public boolean withdraw(double amount) {
+    // Tarik saldo (Latihan 3)
+    public void withdraw(double amount) {
         if (amount < 0) {
-            System.out.println("❌ Penarikan gagal: jumlah tidak boleh negatif!");
-            return false;
+            System.out.println("Jumlah penarikan tidak boleh negatif!");
         } else if (amount > balance) {
-            System.out.println("❌ Penarikan gagal: saldo tidak mencukupi!");
-            return false;
+            System.out.println("Saldo tidak mencukupi untuk penarikan!");
         } else {
             balance -= amount;
-            System.out.println("✅ Penarikan berhasil: -" + amount);
+            System.out.println("Penarikan berhasil: -" + amount);
             System.out.println("Saldo baru: " + balance);
-            return true;
         }
     }
 
